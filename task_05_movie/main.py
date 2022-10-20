@@ -5,10 +5,13 @@ def get_input_parameters():
     :return: добавляемые фильмы, например: ["Леон", "Безумный Макс", "Мементо", "Царь горы"]
     :rtype: List[str]
     """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
-    pass
+    lst = []
+    print('введите фильмы')
+    while True:
+        s = input()
+        if not s: break
+        lst.append(s)
+    return lst
 
 
 def display_result(favorite_films, errors):
@@ -20,10 +23,11 @@ def display_result(favorite_films, errors):
     :param errors: список ненайденных фильмов, например: ["Безумный Макс", "Царь горы"]
     :type errors: List[str]
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
-    pass
+    print(f'список любимых фильмов: {", ".join(favorite_films)}')
+    print(f'список ненайденных фильмов: {", ".join(errors)}')
+
+
+
 
 
 def add_favorite_film(new_favorite_films, available_films):
@@ -41,13 +45,9 @@ def add_favorite_film(new_favorite_films, available_films):
              например: (["Леон", "Мементо"], ["Безумный Макс", "Царь горы"])
     :rtype: Tuple[List[str], List[str]]
     """
-    # TODO: в этой функции пишем логику добавлениея фильмов в список "любимых".
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
-    pass
+    return [i for i in new_favorite_films if i in available_films], \
+           [i for i in new_favorite_films if i not in available_films]
+
 
 
 if __name__ == '__main__':

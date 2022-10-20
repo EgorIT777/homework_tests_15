@@ -9,17 +9,13 @@ class Test05AddFavoriteFilm(unittest.TestCase):
         Проверяем обычный кейс. При вводе ["Леон", "Безумный Макс", "Мементо", "Царь горы"]
          должны получить (["Леон", "Мементо"], ["Безумный Макс", "Царь горы"])
         """
-        available_films = [
-            "Крепкий орешек", "Назад в будущее", "Таксист",
-            "Леон", "Богемская рапсодия", "Город грехов",
-            "Мементо", "Отступники", "Деревня"
-        ]
-        new_favorite_films = ["Леон", "Безумный Макс", "Мементо", "Царь горы"]
-
-        favorite_films, errors = add_favorite_film(new_favorite_films,available_films )
-
-        self.assertEqual(set(favorite_films), {"Леон", "Мементо"})
-        self.assertEqual(set(errors), {"Безумный Макс", "Царь горы"})
+        lst = []
+        print('введите фильмы')
+        while True:
+            s = input()
+            if not s: break
+            lst.append(s)
+        return lst
 
 
 if __name__ == '__main__':

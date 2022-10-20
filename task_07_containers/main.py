@@ -7,10 +7,13 @@ def get_input_parameters():
              например: [[165, 163, 160, 160, 157, 157, 155, 154], 162]
     :rtype: List[List[int], int]
     """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
-    pass
+    new_list = [], []
+    number_of_containers = int(input('Введите количество контейнеров: '))
+    for i in range(number_of_containers):
+        print('Введите вес контейнера: ', end=' ')
+        new_list[0].append(int(input()))
+    new_list[1].append(int(input('Введите вес нового контейнера: ')))
+    return new_list
 
 
 def display_result(serial_number_new_container):
@@ -20,11 +23,7 @@ def display_result(serial_number_new_container):
     :param serial_number_new_container: порядковый номер нового контейнера, например: 3
     :type serial_number_new_container: int
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
-    pass
-
+    print('\nНомер, куда встанет контейнер:', serial_number_new_container)
 
 def search_serial_number_new_container(list_container_weights, new_container_weight):
     """
@@ -38,13 +37,14 @@ def search_serial_number_new_container(list_container_weights, new_container_wei
     :return: порядковый номер нового контейнера, например: 3
     :rtype: int
     """
-    # TODO: в этой функции пишем логику поиска куда вставим новый контейнер.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
-    pass
+    count = 1
+    for i in list_container_weights:
+        if new_container_weight[0] <= i:
+            count += 1
+    return count
+
+
+
 
 
 if __name__ == '__main__':

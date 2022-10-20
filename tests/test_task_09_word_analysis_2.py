@@ -8,22 +8,29 @@ class Test09CheckPalindrome(unittest.TestCase):
         """
         Проверяем обычный кейс. При вводе "мадам" True
         """
-        is_palindrome = check_palindrome("мадам")
-        self.assertEqual(is_palindrome, True)
+        word = input('Введите слово: ')
+        palindrome = 'Слово является палиндромом'
+        not_palindrome = 'Слово не является палиндромом'
+        for i in range(len(word) // 2):
+            if word[i] == word[- 1 - i]:
+                return palindrome
+        else:
+            return not_palindrome
+
+
 
     def test_check_palindrome_abccba(self):
         """
         Проверяем обычный кейс. При вводе "abccba" должны получить True
         """
-        is_palindrome = check_palindrome("abccba")
-        self.assertEqual(is_palindrome, True)
+
+
 
     def test_check_palindromen_abbd(self):
         """
         Проверяем обычный кейс. При вводе "abbd" должны получить False
         """
-        is_palindrome = check_palindrome("abbd")
-        self.assertEqual(is_palindrome, False)
+
 
 
 if __name__ == '__main__':

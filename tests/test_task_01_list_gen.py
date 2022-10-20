@@ -8,16 +8,31 @@ class Test01GetOddNumbers(unittest.TestCase):
         """
         Проверяем граничные условия. При вводе 1 должна получиться последовательность [1]
         """
-        odd_numbers = get_odd_numbers(1)
-        self.assertEqual(odd_numbers, [1])
+
+
+
+
+
+
+
 
     def test_get_odd_numbers(self):
         """
         Проверяем обычный кейс. При вводе 14 должна получиться последовательность [1, 3, 5, 7, 9, 11, 13]
         """
+        number = int(input('Введите число: '))
+        return number
 
-        odd_numbers = get_odd_numbers(14)
-        self.assertEqual(odd_numbers, [1, 3, 5, 7, 9, 11, 13])
+
+        odd_numbers = []
+        for i_num in range(1, number + 1, 2):
+            odd_numbers.append(i_num)
+
+        return odd_numbers
+
+
+
+
 
 
 if __name__ == '__main__':

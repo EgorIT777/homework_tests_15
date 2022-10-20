@@ -8,17 +8,24 @@ class Test06CountNumberUniqueLetters(unittest.TestCase):
         """
         Проверяем обычный кейс. При вводе "привет"  должны получить "Кол-во уникальных букв: 6"
         """
-        number_unique_letters = count_number_unique_letters("привет")
+        word = input('Введите слово: ')
+        word_list = list(word)
+        unique_letters = 0
 
-        self.assertEqual(number_unique_letters, 6)
+        for i in word_list:
+            same_letters = 0
+            for j in word_list:
+                if j == i:
+                    same_letters += 1
+            if same_letters == 1:
+                unique_letters += 1
+
 
     def test_main_lava(self):
         """
         Проверяем обычный кейс. При вводе "лава"  должны получить "Кол-во уникальных букв: 2"
         """
-        number_unique_letters = count_number_unique_letters("лава")
 
-        self.assertEqual(number_unique_letters, 2)
 
 
 if __name__ == '__main__':

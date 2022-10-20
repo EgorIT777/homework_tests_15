@@ -8,8 +8,11 @@ class Test08ShiftList(unittest.TestCase):
         """
         Проверяем обычный кейс. При вводе 1, [1, 2, 3, 4, 5] должны получить  [5, 1, 2, 3, 4]
         """
-        print_result = shift_list(1, [1, 2, 3, 4, 5])
-        self.assertEqual(print_result, [5, 1, 2, 3, 4])
+        K = int(input('Сдвиг: '))
+        original_list = [1, 2, 3, 4, 5]
+        print('Изночальный список:', original_list)
+        return K, original_list
+
 
     def test_shift_list_3_step(self):
         """

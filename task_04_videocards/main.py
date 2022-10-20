@@ -5,10 +5,14 @@ def get_input_parameters():
     :return: набор видеокарт, например: [3070, 2060, 3090, 3070, 3090]
     :rtype: List[int]
     """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
-    pass
+    old_video_cards = []
+    quantity_video_cards = int(input('Кол-во видеокарт: '))
+    for i in range(quantity_video_cards):
+        id_video_cards = int(input(f'{i + 1} Видеокарта: '))
+        old_video_cards.append(id_video_cards)
+    return old_video_cards
+
+
 
 
 def display_result(old_video_cards, new_video_cards):
@@ -20,10 +24,9 @@ def display_result(old_video_cards, new_video_cards):
     :param new_video_cards: новый набор видеокарт, например: [3070, 2060, 3070]
     :type new_video_cards: List[int]
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
-    pass
+    print('Старый список видеокарт: ', old_video_cards)
+    print('Новый список видеокарт: ', new_video_cards)
+
 
 
 def select_video_cards(video_cards):
@@ -36,13 +39,16 @@ def select_video_cards(video_cards):
     :return: набор оставшихся видеокарт, например: [3070, 2060, 3070]
     :rtype: List[int]
     """
-    # TODO: в этой функции пишем логику удаление из списка видеокарт наибольшие элементы.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
-    pass
+    new_video_cards = []
+    for i in range(len(video_cards)):
+        if video_cards[0] >= video_cards[i]:
+            new_video_cards.append(video_cards[i])
+    return new_video_cards
+
+
+
+
+
 
 
 if __name__ == '__main__':

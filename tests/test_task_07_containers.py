@@ -8,12 +8,14 @@ class Test07SearchSerialNumberNewContainer(unittest.TestCase):
         """
         Проверяем обычный кейс. При вводе [165, 163, 160, 160, 157, 157, 155, 154] должны получить 3
         """
-        list_container_weights = [165, 163, 160, 160, 157, 157, 155, 154]
-        new_container_weight = 162
+        new_list = [], []
+        number_of_containers = int(input('Введите количество контейнеров: '))
+        for i in range(number_of_containers):
+            print('Введите вес контейнера: ', end=' ')
+            new_list[0].append(int(input()))
+        new_list[1].append(int(input('Введите вес нового контейнера: ')))
+        return new_list
 
-        serial_number_new_container = search_serial_number_new_container(list_container_weights, new_container_weight)
-
-        self.assertEqual(serial_number_new_container, 3)
 
 
 if __name__ == '__main__':

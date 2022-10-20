@@ -8,8 +8,17 @@ class Test02GetParticipantsNames(unittest.TestCase):
         """
         Проверяем обычный кейс. Выводим элементы списка только с чётными индексами.
         """
-        participants_names = get_participants_names(["Артемий", "Борис", "Влад", "Гоша"])
-        self.assertEqual(participants_names, ["Артемий", "Влад"])
+
+    participants_names = []
+    count = []
+    for i in range(len(participants_names)):
+        if i % 2 == 0:
+            count.append(i)
+    for i_names in (count):
+        participants_names.append(participants_names)
+
+
+
 
 
 if __name__ == '__main__':
